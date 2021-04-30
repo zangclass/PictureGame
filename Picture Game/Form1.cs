@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,9 @@ namespace Picture_Game
         {
             InitializeComponent();
         }
+        private int _counterRoll = 0;
+        int _aliScore = 0, _ebrahimScore = 0;
+        private Button _firstSelect, _secendSelect;
         private Button SearchButton(string buttonName)
         {
             foreach (var item in PanelBoarde.Controls)
@@ -44,7 +48,7 @@ namespace Picture_Game
                     btnSearch.Tag = picCount;
 
                     setPicCounter++;
-                    if(setPicCounter == 2)
+                    if (setPicCounter == 2)
                     {
                         setPicCounter = 0;
                         picCount++;
@@ -57,27 +61,98 @@ namespace Picture_Game
         private void Form1_Load(object sender, EventArgs e)
         {
             SetButtonPicture();
-
+            lblAliScore.Text = _aliScore.ToString();
+            lblEbrahimScore.Text = _ebrahimScore.ToString();
+        }
+        private void ResetGame()
+        {
             foreach (var item in PanelBoarde.Controls)
             {
                 if (item.GetType() == typeof(Button))
                 {
                     var obj = item as Button;
-                    if (obj.Tag != null)
+                    obj.BackgroundImage = null;
+                    obj.Tag = null;
+                    obj.Enabled = true;
+                }
+            }
+            SetButtonPicture();
+            _ebrahimScore = _aliScore = 0;
+            lblAliScore.Text = "0";
+            lblEbrahimScore.Text = "0";
+            lblPlayer.Text = "1";
+            _counterRoll = 0;
+            _firstSelect = null; 
+            _secendSelect = null;
+        }
+        private void Checkplay(Button btn)
+        {
+            _counterRoll++;
+            if (_counterRoll == 1)
+            {
+                _firstSelect = btn;
+                _firstSelect.BackgroundImage = imageList1.Images[int.Parse(_firstSelect.Tag.ToString()) - 1];
+                _firstSelect.Enabled = false;
+            }
+            else
+            {
+                _secendSelect = btn;
+                _secendSelect.BackgroundImage = imageList1.Images[int.Parse(_secendSelect.Tag.ToString()) - 1];
+                _secendSelect.Enabled = false;
+            }
+            if (_counterRoll == 2)
+            {
+                Application.DoEvents();
+                Thread.Sleep(1000);
+
+                if (int.Parse(_firstSelect.Tag.ToString()) == int.Parse(_secendSelect.Tag.ToString()))
+                {
+                    _firstSelect.BackgroundImage = imageList1.Images[int.Parse(_firstSelect.Tag.ToString()) - 1];
+                    _secendSelect.BackgroundImage = imageList1.Images[int.Parse(_firstSelect.Tag.ToString()) - 1];
+
+                    if (lblPlayer.Text == "1")
                     {
-                        listBox1.Items.Add(obj.Tag.ToString());
+                        _aliScore++;
+                        lblAliScore.Text = _aliScore.ToString();
                     }
                     else
                     {
-                        listBox1.Items.Add("Null");
+                        _ebrahimScore++;
+                        lblEbrahimScore.Text = _ebrahimScore.ToString();
                     }
+
+                }
+                else
+                {
+                    _firstSelect.BackgroundImage = null;
+                    _secendSelect.BackgroundImage = null;
+
+                    _firstSelect.Enabled = true;
+                    _secendSelect.Enabled = true;
+                }
+
+                _counterRoll = 0;
+
+                lblPlayer.Text = lblPlayer.Text == "1" ? "2" : "1";
+
+                if ((_aliScore + _ebrahimScore) == 10)
+                {
+                    if (_aliScore == _ebrahimScore)
+                    {
+                        MessageBox.Show("بازی مساوی شد.");
+                    }
+                    else if (_aliScore > _ebrahimScore)
+                    {
+                        MessageBox.Show("علی بازی را برد.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("ابراهیم بازی را برد.");
+                    }
+
+                    ResetGame();
                 }
             }
-        }
-
-        private void Checkplay(Button btn)
-        {
-            MessageBox.Show(btn.Tag.ToString()); ;
         }
         private void btn1_Click(object sender, EventArgs e)
         {

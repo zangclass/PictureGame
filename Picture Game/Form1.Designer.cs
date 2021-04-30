@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelBoarde = new System.Windows.Forms.Panel();
             this.btn1 = new System.Windows.Forms.Button();
@@ -50,22 +52,32 @@
             this.btn19 = new System.Windows.Forms.Button();
             this.btn20 = new System.Windows.Forms.Button();
             this.btn16 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblEbrahimScore = new System.Windows.Forms.Label();
+            this.lblAliScore = new System.Windows.Forms.Label();
+            this.lblPlayer = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.PanelBoarde.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCyan;
+            this.panel1.Controls.Add(this.lblPlayer);
+            this.panel1.Controls.Add(this.lblAliScore);
+            this.panel1.Controls.Add(this.lblEbrahimScore);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 340);
+            this.panel1.Location = new System.Drawing.Point(0, 304);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(781, 70);
+            this.panel1.Size = new System.Drawing.Size(467, 106);
             this.panel1.TabIndex = 0;
             // 
             // PanelBoarde
             // 
-            this.PanelBoarde.Controls.Add(this.listBox1);
             this.PanelBoarde.Controls.Add(this.btn17);
             this.PanelBoarde.Controls.Add(this.btn18);
             this.PanelBoarde.Controls.Add(this.btn19);
@@ -89,13 +101,13 @@
             this.PanelBoarde.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelBoarde.Location = new System.Drawing.Point(0, 0);
             this.PanelBoarde.Name = "PanelBoarde";
-            this.PanelBoarde.Size = new System.Drawing.Size(781, 340);
+            this.PanelBoarde.Size = new System.Drawing.Size(467, 304);
             this.PanelBoarde.TabIndex = 1;
             // 
             // btn1
             // 
             this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn1.Location = new System.Drawing.Point(45, 43);
+            this.btn1.Location = new System.Drawing.Point(48, 14);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(70, 61);
             this.btn1.TabIndex = 0;
@@ -105,7 +117,7 @@
             // btn5
             // 
             this.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn5.Location = new System.Drawing.Point(349, 43);
+            this.btn5.Location = new System.Drawing.Point(352, 14);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(70, 61);
             this.btn5.TabIndex = 2;
@@ -115,7 +127,7 @@
             // btn4
             // 
             this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn4.Location = new System.Drawing.Point(273, 43);
+            this.btn4.Location = new System.Drawing.Point(276, 14);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(70, 61);
             this.btn4.TabIndex = 3;
@@ -125,7 +137,7 @@
             // btn3
             // 
             this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn3.Location = new System.Drawing.Point(197, 43);
+            this.btn3.Location = new System.Drawing.Point(200, 14);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(70, 61);
             this.btn3.TabIndex = 4;
@@ -135,7 +147,7 @@
             // btn2
             // 
             this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn2.Location = new System.Drawing.Point(121, 43);
+            this.btn2.Location = new System.Drawing.Point(124, 14);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(70, 61);
             this.btn2.TabIndex = 5;
@@ -145,7 +157,7 @@
             // btn7
             // 
             this.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn7.Location = new System.Drawing.Point(121, 110);
+            this.btn7.Location = new System.Drawing.Point(124, 81);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(70, 61);
             this.btn7.TabIndex = 11;
@@ -155,7 +167,7 @@
             // btn8
             // 
             this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn8.Location = new System.Drawing.Point(197, 110);
+            this.btn8.Location = new System.Drawing.Point(200, 81);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(70, 61);
             this.btn8.TabIndex = 10;
@@ -165,7 +177,7 @@
             // btn9
             // 
             this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn9.Location = new System.Drawing.Point(273, 110);
+            this.btn9.Location = new System.Drawing.Point(276, 81);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(70, 61);
             this.btn9.TabIndex = 9;
@@ -175,7 +187,7 @@
             // btn10
             // 
             this.btn10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn10.Location = new System.Drawing.Point(349, 110);
+            this.btn10.Location = new System.Drawing.Point(352, 81);
             this.btn10.Name = "btn10";
             this.btn10.Size = new System.Drawing.Size(70, 61);
             this.btn10.TabIndex = 8;
@@ -185,7 +197,7 @@
             // btn6
             // 
             this.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn6.Location = new System.Drawing.Point(45, 110);
+            this.btn6.Location = new System.Drawing.Point(48, 81);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(70, 61);
             this.btn6.TabIndex = 6;
@@ -195,7 +207,7 @@
             // btn12
             // 
             this.btn12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn12.Location = new System.Drawing.Point(121, 177);
+            this.btn12.Location = new System.Drawing.Point(124, 148);
             this.btn12.Name = "btn12";
             this.btn12.Size = new System.Drawing.Size(70, 61);
             this.btn12.TabIndex = 17;
@@ -205,7 +217,7 @@
             // btn13
             // 
             this.btn13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn13.Location = new System.Drawing.Point(197, 177);
+            this.btn13.Location = new System.Drawing.Point(200, 148);
             this.btn13.Name = "btn13";
             this.btn13.Size = new System.Drawing.Size(70, 61);
             this.btn13.TabIndex = 16;
@@ -215,7 +227,7 @@
             // btn14
             // 
             this.btn14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn14.Location = new System.Drawing.Point(273, 177);
+            this.btn14.Location = new System.Drawing.Point(276, 148);
             this.btn14.Name = "btn14";
             this.btn14.Size = new System.Drawing.Size(70, 61);
             this.btn14.TabIndex = 15;
@@ -225,7 +237,7 @@
             // btn15
             // 
             this.btn15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn15.Location = new System.Drawing.Point(349, 177);
+            this.btn15.Location = new System.Drawing.Point(352, 148);
             this.btn15.Name = "btn15";
             this.btn15.Size = new System.Drawing.Size(70, 61);
             this.btn15.TabIndex = 14;
@@ -235,7 +247,7 @@
             // btn11
             // 
             this.btn11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn11.Location = new System.Drawing.Point(45, 177);
+            this.btn11.Location = new System.Drawing.Point(48, 148);
             this.btn11.Name = "btn11";
             this.btn11.Size = new System.Drawing.Size(70, 61);
             this.btn11.TabIndex = 12;
@@ -245,7 +257,7 @@
             // btn17
             // 
             this.btn17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn17.Location = new System.Drawing.Point(121, 244);
+            this.btn17.Location = new System.Drawing.Point(124, 215);
             this.btn17.Name = "btn17";
             this.btn17.Size = new System.Drawing.Size(70, 61);
             this.btn17.TabIndex = 23;
@@ -255,7 +267,7 @@
             // btn18
             // 
             this.btn18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn18.Location = new System.Drawing.Point(197, 244);
+            this.btn18.Location = new System.Drawing.Point(200, 215);
             this.btn18.Name = "btn18";
             this.btn18.Size = new System.Drawing.Size(70, 61);
             this.btn18.TabIndex = 22;
@@ -265,7 +277,7 @@
             // btn19
             // 
             this.btn19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn19.Location = new System.Drawing.Point(273, 244);
+            this.btn19.Location = new System.Drawing.Point(276, 215);
             this.btn19.Name = "btn19";
             this.btn19.Size = new System.Drawing.Size(70, 61);
             this.btn19.TabIndex = 21;
@@ -275,7 +287,7 @@
             // btn20
             // 
             this.btn20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn20.Location = new System.Drawing.Point(349, 244);
+            this.btn20.Location = new System.Drawing.Point(352, 215);
             this.btn20.Name = "btn20";
             this.btn20.Size = new System.Drawing.Size(70, 61);
             this.btn20.TabIndex = 20;
@@ -285,31 +297,90 @@
             // btn16
             // 
             this.btn16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn16.Location = new System.Drawing.Point(45, 244);
+            this.btn16.Location = new System.Drawing.Point(48, 215);
             this.btn16.Name = "btn16";
             this.btn16.Size = new System.Drawing.Size(70, 61);
             this.btn16.TabIndex = 18;
             this.btn16.UseVisualStyleBackColor = true;
             this.btn16.Click += new System.EventHandler(this.btn16_Click);
             // 
-            // listBox1
+            // imageList1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(497, 55);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(190, 212);
-            this.listBox1.TabIndex = 24;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "1.jpg");
+            this.imageList1.Images.SetKeyName(1, "2.jpg");
+            this.imageList1.Images.SetKeyName(2, "3.jpg");
+            this.imageList1.Images.SetKeyName(3, "4.jpg");
+            this.imageList1.Images.SetKeyName(4, "5.jpg");
+            this.imageList1.Images.SetKeyName(5, "6.jpg");
+            this.imageList1.Images.SetKeyName(6, "7.jpg");
+            this.imageList1.Images.SetKeyName(7, "8.jpg");
+            this.imageList1.Images.SetKeyName(8, "9.jpg");
+            this.imageList1.Images.SetKeyName(9, "10.jpg");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "1 - Ali : ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(140, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "2 - Ebrahim : ";
+            // 
+            // lblEbrahimScore
+            // 
+            this.lblEbrahimScore.AutoSize = true;
+            this.lblEbrahimScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEbrahimScore.Location = new System.Drawing.Point(167, 62);
+            this.lblEbrahimScore.Name = "lblEbrahimScore";
+            this.lblEbrahimScore.Size = new System.Drawing.Size(0, 25);
+            this.lblEbrahimScore.TabIndex = 2;
+            // 
+            // lblAliScore
+            // 
+            this.lblAliScore.AutoSize = true;
+            this.lblAliScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAliScore.Location = new System.Drawing.Point(107, 26);
+            this.lblAliScore.Name = "lblAliScore";
+            this.lblAliScore.Size = new System.Drawing.Size(0, 25);
+            this.lblAliScore.TabIndex = 3;
+            // 
+            // lblPlayer
+            // 
+            this.lblPlayer.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.lblPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer.ForeColor = System.Drawing.Color.White;
+            this.lblPlayer.Location = new System.Drawing.Point(339, 26);
+            this.lblPlayer.Name = "lblPlayer";
+            this.lblPlayer.Size = new System.Drawing.Size(83, 61);
+            this.lblPlayer.TabIndex = 4;
+            this.lblPlayer.Text = "1";
+            this.lblPlayer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 410);
+            this.ClientSize = new System.Drawing.Size(467, 410);
             this.Controls.Add(this.PanelBoarde);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.PanelBoarde.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -339,7 +410,12 @@
         private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Button btn5;
         private System.Windows.Forms.Button btn1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label lblPlayer;
+        private System.Windows.Forms.Label lblAliScore;
+        private System.Windows.Forms.Label lblEbrahimScore;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
